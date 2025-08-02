@@ -29,6 +29,7 @@ function TwoSum(nums ,target)
 }
 
 arr = [12,22,13,19,9,6,7,3,2,4,5,8];
-target =9;
+nums = [1,5,10,22,11,18,2,3];
+target =5;
 
-console.log(TwoSum(arr,target));
+console.log(TwoSum(nums,target));
