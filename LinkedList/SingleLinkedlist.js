@@ -83,6 +83,22 @@ class LinkedList {
             current = current.next;
         }
     }
+
+
+     Reverse()
+    {
+        let prev = null;
+        let current = this.head;
+
+        while(current)
+        {
+            let next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next
+        }
+        return prev;
+    }
     getsize()
     {
         return this.size;
@@ -110,5 +126,12 @@ console.log(myList.Search(40));
 myList.Delete(50);
 
 console.log("The Length of the LinkedList is : " + myList.getsize());
+
+console.log("Reverse of Linked List is ");
+
+console.log(myList.Reverse());
+
+console.log("The Length of the LinkedList is : " + myList.getsize());
+
 
 
