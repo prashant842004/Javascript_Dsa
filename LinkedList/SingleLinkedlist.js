@@ -99,6 +99,29 @@ class LinkedList {
         }
         return prev;
     }
+
+    DeleteDuplicateOptimal()
+    {
+        if(!this.head) return null;
+
+        let current = this.head;
+        let seen = new Set();
+
+        seen.add(current.value);
+
+        while(current && current.next)
+        {
+            if(seen.has(current.next.value))
+            {
+                current.next = current.next.next;
+            }
+            else{
+                seen.add(current.value);
+                current = current.next;
+            }
+        }
+        this.Display();
+    }
     getsize()
     {
         return this.size;
@@ -108,7 +131,12 @@ class LinkedList {
 let myList = new LinkedList();
 
 myList.Insert(10);
+myList.Insert(10);
+myList.Insert(10);
 myList.Insert(20);
+myList.Insert(30);
+myList.Insert(70);
+myList.Insert(30);
 myList.Insert(30);
 myList.Insert(40);
 myList.Insert(50);
@@ -119,19 +147,22 @@ myList.Insert(90);
 
 myList.Display();
 
-myList.Delete(20);
+// myList.Delete(20);
 
-myList.Display();
-console.log(myList.Search(40));
-myList.Delete(50);
+// myList.Display();
+// console.log(myList.Search(40));
+// myList.Delete(50);
+
+// console.log("The Length of the LinkedList is : " + myList.getsize());
+
+// console.log("Reverse of Linked List is ");
+
+// console.log(myList.Reverse());
 
 console.log("The Length of the LinkedList is : " + myList.getsize());
-
-console.log("Reverse of Linked List is ");
-
-console.log(myList.Reverse());
-
+myList.DeleteDuplicateOptimal();
 console.log("The Length of the LinkedList is : " + myList.getsize());
+
 
 
 
